@@ -3,11 +3,9 @@
  * and open the template in the editor.
  */
 
-package premierappletjava;
+//package premierappletjava;
 
-//import java.awt.*;
-import java.applet.Applet;
-import java.awt.Label;
+import java.awt.*;
 
 
 public class FirstApplet extends java.applet.Applet {
