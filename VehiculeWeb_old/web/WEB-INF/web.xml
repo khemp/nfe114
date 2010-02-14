@@ -27,6 +27,8 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
+        <welcome-file>recherche/rechercherVehiculeParMarque.jsp</welcome-file>
         <welcome-file>index.jsp</welcome-file>
+        <welcome-file>page_acceuille.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

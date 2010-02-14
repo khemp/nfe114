@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : rechercheVehiculeParMarque
     Created on : Feb 14, 2010, 5:14:17 PM
     Author     : khemp
@@ -16,7 +16,7 @@
     </head>
     <body>
         <h1>Recherche par marque</h1>
-        <html:form  action="/rechercheParMarque">
+        <html:form  action="/rechercheVehiculeParMarque">
         <table border="1">
             <tbody>
                     <tr>
@@ -31,7 +31,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><html:submit value="Login" /></td>
+                        <td><html:submit value="marque" /></td>
                     </tr>
                 </tr>
             </tbody>
