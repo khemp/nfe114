@@ -35,6 +35,10 @@ public class Vehicule {
         this.Prix= Prix;
     }
 
+    Vehicule(String marque, String modele, Integer prix, String couleur) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
 
     //Fonction GetMarque, retourne la marque de la voiture (champ prive)
     public String GetMarque()

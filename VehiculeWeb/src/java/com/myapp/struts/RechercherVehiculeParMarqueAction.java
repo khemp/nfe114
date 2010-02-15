@@ -1,39 +1,39 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.myapp.struts;
 
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.struts.action.ActionForm;
-import org.apache.struts.action.ActionForward;
-import org.apache.struts.action.ActionMapping;
+import nfe114_gestion_parc_automobile.Vehicule;
+import nfe114_gestion_parc_automobile.VehiculeFactory;
 
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionForward;
 /**
  *
  * @author khemp
  */
-public class RechercherVehiculeParMarqueAction extends org.apache.struts.action.Action {
+
+public class RechercherVehiculeParMarqueAction extends Action {
 
     /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
-    private static final String FAILURE = "failure";
+    private final static String SUCCESS = "sucess";
+    private final static String EMPTY = "empty";
 
-
-    @Override
-    public ActionForward execute(ActionMapping mapping, ActionForm form,
+    public ActionForward execute(ActionMapping mapping, ActionForm  form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        // extract user data
-        RechercherVehiculeParMarque formBean = (RechercherVehiculeParMarque) form;
-        String saisie = formBean.getSaisie();
-        request.setAttribute("saisie", saisie);
-        // perform validation
-        if (saisie == null) {//la saisie est null
-            return mapping.findForward(FAILURE);
-        }else{
+        RechercherVehiculeParMarque myform = (RechercherVehiculeParMarque) form;
+        String marque = myform.getSaisie();
+        List<Vehicule> vehicules = VehiculeFactory.rechercherVehiculeParMarque(marque);
+        if(vehicules == null || vehicules.size() ==0) {
             return mapping.findForward(SUCCESS);
         }
+
+        request.setAttribute("vehicules", vehicules);
+        return mapping.findForward(SUCCESS);
+        //VehiculeFactory.NouveauVehicule("citroen", "saxo",55000,"gris");
+
     }
 }
